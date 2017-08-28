@@ -1,0 +1,55 @@
+{
+  "itemName" : "chimera",
+  "level" : 5,
+  "price" : 18000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An experimental black market flame thrower. [custom]",
+  "shortdescription" : "Chimera",
+  "tooltipKind" : "gun",
+  "category" : "^pink;Black Market Weapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","ranged","upgradeableWeapon"],
+
+  "inventoryIcon" : "icon.png",
+
+  "animation" : "/items/active/weapons/ranged/test.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "chimera.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fireStart" : [ "/sfx/gun/flamethrower_start.ogg" ],
+      "fireLoop" : [ "/sfx/gun/flamethrower_loop.ogg" ],
+      "fireEnd" : [ "/sfx/gun/flamethrower_stop.ogg" ]
+    }
+  },
+  "baseOffset" : [0.9, 0],
+  "muzzleOffset" : [2.5, 0.4],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "fire",
+
+  "primaryAbilityType" : "chimera",
+  "primaryAbility" : {
+    "baseDps" : 25,
+    "energyUsage" : 30
+  },
+
+  "altAbilityType" : "chimerasbreath",
+  "altAbility" : {},
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua",
+
+  "upgradeParameters" : {
+    "inventoryIcon" : "flamethrower_l6.png",
+    "animationParts" : {
+      "middle" : "/items/active/weapons/ranged/flamethrower/flamethrower_l6.png"
+    },
+    "shortdescription" : "Flamethrower ^yellow;^reset;"
+  }
+}

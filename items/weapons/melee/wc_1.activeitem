@@ -1,0 +1,80 @@
+{
+  "itemName" : "wc_1",
+  "price" : 500,
+  "maxStack" : 1,
+  "rarity": "legendary",
+  "description" : "Fueled by blood magic. Can be upgraded.",
+  "shortdescription" : "Darkshard 126-k1",
+  "tooltipKind" : "sword",
+  "category" : "broadsword",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","broadsword"],
+
+  "inventoryIcon" : "testsword1.png",
+
+  "animation" : "/items/active/weapons/melee/broadsword/energybroadsword.animation",
+  "animationParts" : {
+    "handle" : "perunhandle.png",
+    "handleFullbright" : "handlefullbright",
+    "blade" : "perunblade.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/melee/energymeleeweapon.lua"],
+
+  "activeTime" : 1.0,
+
+  "elementalType" : "electric",
+
+  "primaryAbilityType" : "broadswordcombo",
+	"primaryAbility": {
+		"fireTime": 0.5,
+		"baseDps": 20,
+		"stances": {
+			"idle": {
+				"twoHanded": false,
+				"armRotation": -20,
+				"weaponRotation": 120,
+				"weaponOffset": [0, 0],
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"windup1": {
+				"twoHanded": false,
+				"weaponOffset": [0, 0]
+			},
+			"preslash1": {
+				"twoHanded": false,
+				"duration": 0
+			},
+			"fire1": {
+				"twoHanded": false,
+				"duration": 0.2
+			},
+			"wait1": {
+				"twoHanded": false,
+				"duration": 4
+			},
+			"windup2": {
+				"twoHanded": false
+			},
+			"fire2": {
+				"twoHanded": false,
+				"duration": 0.1
+			},
+			"wait2": {
+				"twoHanded": false,
+				"duration": 0.2
+			},
+			"windup3": {
+				"twoHanded": false
+			},
+			"fire3": {
+				"twoHanded": false
+			}
+    }
+  },
+
+  "altAbilityType" : "flipslash",
+  "builder": "/items/buildscripts/buildunrandweapon.lua"
+}
