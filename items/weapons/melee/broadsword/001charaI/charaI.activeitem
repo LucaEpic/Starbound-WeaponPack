@@ -1,0 +1,80 @@
+{
+  "itemName" : "wc_charaI",
+  "price" : 500,
+  "maxStack" : 1,
+  "rarity": "legendary",
+  "shortdescription" : "Chara's Chilled Dagger",
+  "description" : "A Legendary Sword Fused With Some of Chara's Energy.",
+  "tooltipKind" : "sword",
+  "category" : "Godly Essence",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","broadsword"],
+  "inventoryIcon" : "inventoryIcon.png",
+  "animation" : "/items/active/weapons/melee/broadsword/combobroadsword.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "blade.png"
+  },
+  "animationCustom" : { },
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "elementalType" : "ice",
+  "primaryAbilityType" : "broadswordcombo",
+	"primaryAbility": {
+		"fireTime": 0.5,
+		"baseDps": 20,
+		"stances": {
+			"idle": {
+				"twoHanded": false,
+				"armRotation": -20,
+				"weaponRotation": 120,
+				"weaponOffset": [0.25, -1.0],
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"windup1": {
+				"twoHanded": false,
+				"weaponOffset": [0.25, -1.25]
+			},
+			"preslash1": {
+				"twoHanded": false,
+				"duration": 0,
+        "weaponOffset": [0.25, -1.25]
+			},
+			"fire1": {
+				"twoHanded": false,
+				"duration": 0.2,
+        "weaponOffset": [0.25, -1.25]
+			},
+			"wait1": {
+				"twoHanded": false,
+				"duration": 4,
+        "weaponOffset": [0.25, -1.25]
+			},
+			"windup2": {
+				"twoHanded": false,
+        "weaponOffset": [0.25, -1.25]
+			},
+			"fire2": {
+				"twoHanded": false,
+				"duration": 0.1,
+        "weaponOffset": [0.25, -1.25]
+			},
+			"wait2": {
+				"twoHanded": false,
+				"duration": 0.2,
+        "weaponOffset": [0.25, -1.25]
+			},
+			"windup3": {
+				"twoHanded": false,
+        "weaponOffset": [0.25, -1.25]
+			},
+			"fire3": {
+				"twoHanded": false,
+        "weaponOffset": [0.25, -1.25]
+      }
+    }
+  },
+
+  "altAbilityType" : "",
+  "builder": "/items/buildscripts/buildunrandweapon.lua"
+}
