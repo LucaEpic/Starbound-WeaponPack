@@ -1,0 +1,39 @@
+{
+  "itemName" : "testsycthe",
+  "price" : 500,
+  "maxStack" : 1,
+  "rarity": "legendary",
+  "shortdescription" : "Chara's Poisoned Sword",
+  "description" : "A Legendary Sword Fused With Some of Chara's Energy.",
+  "tooltipKind" : "sword",
+  "category" : "Godly Essence",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","broadsword"],
+  "inventoryIcon" : "inventoryIcon.png",
+  "animation" : "/items/active/weapons/melee/broadsword/combobroadsword.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "blade.png"
+  },
+  "animationCustom" : { },
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "elementalType" : "poison",
+  "primaryAbilityType" : "ScytheSlash",
+	"primaryAbility": {
+		"fireTime": 1,
+		"baseDps":30,
+    "stances": {
+			"idle": {
+				"twoHanded": false,
+				"armRotation": 15,
+				"weaponRotation": -50,
+				"weaponOffset": [1.12, -2.25],
+				"allowRotate": false,
+				"allowFlip": true
+			}
+    }
+  },
+
+  "altAbilityType" : "",
+  "builder": "/items/buildscripts/buildunrandweapon.lua"
+}

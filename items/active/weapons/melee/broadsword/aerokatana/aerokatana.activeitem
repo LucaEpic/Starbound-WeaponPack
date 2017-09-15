@@ -1,0 +1,423 @@
+{
+	"itemName": "aerokatana",
+	"price": 10000,
+	"level": 6,
+	"maxStack": 1,
+	"rarity": "Legendary",
+	"description": "The power of a thousand cuts.",
+	"shortdescription": "Aero Katana",
+	"tooltipKind": "base",
+	"category": "^blue;Custom Weapon^reset;",
+	"twoHanded": true,
+	"itemTags": ["weapon", "melee", "broadsword", "upgradeableWeapon"],
+
+	"inventoryIcon": "soluskatanaicon.png?replace;FDD14D=B1B1B1;FD8F4D=676767;FFFFFF=E9E9E9",
+
+	"animation": "/items/active/weapons/melee/broadsword/combobroadsword.animation",
+	"animationParts": {
+		"handle": "handle.png?replace;9DA8AF=E9E9E9;676F83=B1B1B1;3D3D51=676767"
+	},
+	"animationCustom": {},
+
+	"scripts": ["/items/active/weapons/melee/meleeweapon.lua"],
+
+	"activeTime": 1.0,
+
+	"elementalType": "electric",
+
+  "primaryAbilityType" : "broadswordcombo",
+	"primaryAbility": {
+		"fireTime": 0.8,
+		"stances": {
+			"idle": {
+				"twoHanded": false,
+				"armRotation": -20,
+				"weaponRotation": 120,
+				"weaponOffset": [0, 0],
+				"allowRotate": false,
+				"allowFlip": true
+			},
+			"windup1": {
+				"twoHanded": true,
+				"armRotation": -40,
+				"weaponRotation": 120,
+				"weaponOffset": [0, 0]
+			},
+			"preslash1": {
+				"twoHanded": false,
+				"duration": 0
+			},
+			"fire1": {
+				"twoHanded": true,
+				"armRotation": 60,
+				"weaponRotation": -120,
+				"weaponOffset": [0, 0],
+				"duration": 0.2
+			},
+			"wait1": {
+				"twoHanded": true,
+				"armRotation": -50,
+				"weaponRotation": 10,
+				"duration": 4
+			},
+			"windup2": {
+				"twoHanded": true,
+				"armRotation": -15,
+				"weaponRotation": -60
+			},
+			"fire2": {
+				"twoHanded": true,
+				"armRotation": -150,
+				"weaponRotation": 55,
+				"duration": 0.1
+			},
+			"wait2": {
+				"twoHanded": true,
+				"armRotation": -45,
+				"weaponRotation": -55,
+				"duration": 0.2
+			},
+			"windup3": {
+				"twoHanded": true,
+				"armRotation": -30,
+				"weaponRotation": -60
+			},
+			"fire3": {
+				"twoHanded": true,
+				"armRotation": 80,
+				"weaponRotation": -180
+			}
+		},
+		"stepDamageConfig": [{
+			"baseDamageFactor": 0.5,
+			"knockback": 25
+		}, {
+			"baseDamageFactor": 1.0,
+			"knockback": 15
+		}, {
+			"baseDamageFactor": 1.0,
+			"knockback": 15
+		}]
+	},
+
+
+	"altAbilityType": "traildash",
+	"altAbility": {
+		"name": "Aero Slash",
+		"cooldownTime": 1,
+		"energyUsage": 9999,
+		"dashTime": 0.1,
+		"dashSpeed": 10,
+		"trailInterval": 0.7,
+		"projectileParameters": {
+			"timeToLive": 0.1,
+			"speed": 0,
+			"power": -1,
+			"damageTeam": {
+				"type": "indiscriminate"
+			},
+			"damagePoly": [
+				[-1, 0],
+				[-1, -1],
+				[0, -1],
+				[1, -1],
+				[1, 0],
+				[1, 1],
+				[0, 1],
+				[-1, 1]
+			],
+			"statusEffects": [{
+				"effect": "invisible",
+				"duration": 1.01
+        }],
+			"actionOnReap": [{
+				"action": "projectile",
+				"type": "invisibleprojectile",
+				"power": -10,
+				"offsetRange": [0, 1, 0, 1],
+				"config": {
+					"speed": 0,
+					"damageTeam": {
+						"type": "ghostly"
+					},
+					"periodicActions": [{
+						"time": 0.1,
+						"repeat": true,
+						"action": "projectile",
+						"type": "invisibleprojectile",
+						"power": -1,
+						"offsetRange": [20, 20, -20, 0],
+						"config": {
+							"speed": 0,
+							"actionOnReap": [{
+								"action": "sound",
+								"options": ["/sfx/melee/travelingslash_electric5.ogg"],
+								"time": 0,
+								"repeat": false
+							}, {
+								"action": "projectile",
+								"type": "energytravelingswoosh",
+								"offsetRange": [5, 5, -5, -5],
+								"fuzzAngle": 180,
+								"config": {
+									"speed": 40,
+									"power": 5,
+									"damageTeam": {
+										"type": "enemy"
+									}
+								}
+							}, {
+								"action": "loop",
+								"count": 4,
+								"body": [{
+									"action": "projectile",
+									"type": "sonic",
+									"offsetRange": [5, 5, -5, -5],
+									"fuzzAngle": 180,
+									"config": {
+										"damageKind": "broadsword",
+										"speed": 60,
+										"power": 3,
+										"bounces": 0,
+										"damageTeam": {
+											"type": "enemy"
+										}
+									}
+								}]
+							}, {
+								"action": "particle",
+								"specification": {
+									"type": "textured",
+									"image": "/particles/monsters/cultistbossdash/cultistbossdash.png?replace;FD8F4D=43AFF3;FDD14D=64FAFF",
+									"position": [0, 0],
+									"finalVelocity": [0, 0],
+									"approach": [0, 0],
+									"fade": 1,
+									"size": 1,
+									"layer": "back",
+									"timeToLive": 0.0,
+									"destructionTime": 0.2,
+									"destructionAction": "fade",
+									"fullbright": true
+								}
+							}],
+							"timeToLive": 0
+						}
+					}, {
+						"action": "particle",
+						"specification": {
+							"type": "animated",
+							"animation": "/animations/blinkout/blinkout.animation",
+							"layer": "front",
+							"size": 1,
+							"timeToLive": 0.5
+						},
+						"time": 0,
+						"repeat": false
+					}],
+					"timeToLive": 1
+				}
+			}, {
+				"action": "sound",
+				"options": ["/sfx/npc/boss/cultistboss_blink.ogg"],
+				"time": 0,
+				"repeat": false
+			}, {
+				"action": "projectile",
+				"type": "invisibleprojectile",
+				"power": -1,
+				"config": {
+					"speed": 0,
+					"timeToLive": 0.1,
+					"actionOnReap": [{
+						"action": "projectile",
+						"type": "invisibleprojectile",
+						"power": -1,
+						"config": {
+							"speed": 0,
+							"damageTeam": {
+								"type": "ghostly"
+							},
+							"periodicActions": [{
+								"time": 0.1,
+								"repeat": true,
+								"action": "projectile",
+								"type": "invisibleprojectile",
+								"power": -1,
+								"offsetRange": [20, 20, -20, 0],
+								"config": {
+									"speed": 0,
+									"actionOnReap": [{
+										"action": "sound",
+										"options": ["/sfx/melee/travelingslash_electric5.ogg"],
+										"time": 0,
+										"repeat": false
+									}, {
+										"action": "projectile",
+										"type": "energytravelingswoosh",
+										"offsetRange": [5, 5, -5, -5],
+										"fuzzAngle": 180,
+										"config": {
+											"speed": 40,
+											"power": 5,
+											"damageTeam": {
+												"type": "enemy"
+											}
+										}
+									}, {
+										"action": "loop",
+										"count": 4,
+										"body": [{
+											"action": "projectile",
+											"type": "sonic",
+											"offsetRange": [5, 5, -5, -5],
+											"fuzzAngle": 180,
+											"config": {
+												"damageKind": "broadsword",
+												"speed": 60,
+												"power": 3,
+												"bounces": 0,
+												"damageTeam": {
+													"type": "enemy"
+												}
+											}
+										}]
+									}, {
+										"action": "particle",
+										"specification": {
+											"type": "textured",
+											"image": "/particles/monsters/cultistbossdash/cultistbossdash.png?flipx?replace;FD8F4D=43AFF3;FDD14D=64FAFF",
+											"position": [0, 0],
+											"finalVelocity": [0, 0],
+											"approach": [0, 0],
+											"fade": 1,
+											"size": 1,
+											"layer": "back",
+											"timeToLive": 0.0,
+											"destructionTime": 0.2,
+											"destructionAction": "fade",
+											"fullbright": true
+										}
+									}],
+									"timeToLive": 0
+								}
+							}],
+							"timeToLive": 1
+						}
+					}]
+				}
+			}],
+			"piercing": false
+		},
+		"stances": {
+			"windup": {
+				"duration": 1,
+				"twoHanded": true,
+				"armRotation": -20,
+				"weaponRotation": 20,
+				"allowRotate": false
+			},
+			"dash": {
+				"twoHanded": true,
+				"armRotation": -120,
+				"weaponRotation": -200,
+				"allowRotate": false
+			}
+		},
+		"projectileType": "invisibleprojectile"
+	},
+	"particleEmitters": {
+		"physicalswoosh": {
+			"burstCount": 0
+		},
+		"electricswoosh": {
+			"active": false,
+			"particles": []
+		}
+	},
+	"animatedParts": {
+		"parts": {
+			"swoosh": {
+				"partStates": {
+					"swoosh": {
+						"fire": {
+							"properties": {
+								"image": "/items/active/weapons/melee/broadsword/swoosh/solusswoosh.png:<frame>?saturation=-154?flipy",
+								"offset": [0, -2],
+								"damageArea": [
+									[-5, 2],
+									[-2.5, 3],
+									[1, 3],
+									[4, 1.75],
+									[5.25, -0.25],
+									[5.25, -2.25],
+									[3.75, -3.25],
+									[0.25, -2.75]
+								]
+							}
+						},
+						"fire2": {
+							"properties": {
+								"image": "/items/active/weapons/melee/broadsword/swoosh2/solusswoosh.png:<frame>?saturation=-154",
+								"offset": [5.0, 1.0],
+								"damageArea": [
+									[-4, 1],
+									[2.5, 1],
+									[2.5, -2],
+									[-4, -2]
+								]
+							}
+						},
+						"fire3": {
+							"properties": {
+								"image": "/items/active/weapons/melee/broadsword/swoosh2/solusswoosh.png:<frame>?saturation=-154?flipy",
+								"offset": [4.5, -0.8],
+								"damageArea": [
+									[-4, 1],
+									[2.5, 1],
+									[2.5, -2],
+									[-4, -2]
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"stateTypes": {
+			"blade": {
+				"default": "inactive",
+				"states": {
+					"inactive": {
+						"properties": {
+							"lightsOff": ["glow"],
+							"particleEmittersOff": ["blade"]
+						}
+					},
+					"extend": {
+						"properties": {
+							"lightsOff": ["glow"],
+							"particleEmittersOff": ["blade"],
+							"immediateSound": "/missing.ogg"
+						}
+					},
+					"active": {
+						"properties": {
+							"lightsOff": ["glow"],
+							"particleEmittersOff": ["blade"],
+							"persistentSound": "/none.ogg"
+						}
+					},
+					"retract": {
+						"properties": {
+							"lightsOff": ["glow"],
+							"particleEmittersOff": ["blade"],
+							"immediateSound": "/stop.ogg"
+						}
+					}
+				}
+			}
+		}
+	},
+	"builder": "/items/buildscripts/buildunrandweapon.lua"
+}

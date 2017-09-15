@@ -1,0 +1,20 @@
+{
+  "name" : "jetpack",
+  "type" : "legs",
+
+  "scripts" : ["jetpack.lua"],
+  "animator" : "jetpacksparks.animation",
+
+  "description" : "Flyyyyyyyyy",
+  "shortDescription" : "Jetpack!",
+  "rarity" : "Legendary",
+  "icon" : "/tech/jetpack.png",
+
+  "chipCost" : 8,
+
+  "techPrjectileConfig" : {
+    "power": 0.5,
+    "speed": 50
+  },
+  "energyCostPerSecond" : 0.1
+}

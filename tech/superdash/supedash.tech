@@ -1,0 +1,21 @@
+{
+  "name" : "superdash",
+  "type" : "body",
+
+  "scripts" : ["superdash.lua"],
+  "animator" : "superdash.animation",
+
+  "description" : "Gotta go fast!",
+  "shortDescription" : "Superdash",
+  "rarity" : "Legendary",
+  "icon" : "/tech/superdash.png",
+
+  "chipCost" : 8,
+
+  "energyCostPerSecond" : 50,
+  "maximumDoubleTapTime" : 0.25,
+  "dashControlForce" : 1000,
+  "dashSpeedModifier" : 5.6,
+  "stopAfterDash" : true,
+  "groundOnly" : false
+}

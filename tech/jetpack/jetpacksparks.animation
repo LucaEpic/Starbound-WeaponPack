@@ -1,0 +1,13 @@
+{
+  "particleEmitters" : {
+    "rocketParticles1" : {
+      "emissionRate" : 50.0,
+      "particles" : [
+        {
+          "particle" : "jetpacksparks",
+          "offset" : [0, 0]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+[
+  {  "op" : "add","path" : "/exoslash","value" : "/items/active/weapons/melee/abilities/broadsword/exoslash/exoslash.weaponability" },
+  {  "op" : "add","path" : "/charadash","value" : "/items/active/weapons/melee/abilities/broadsword/charadash/charadash.weaponability" },
+  { "op" : "add","path" : "/ScytheSlash","value" : "/items/active/weapons/melee/abilities/broadsword/scytheslash/scytheslash.weaponability"}  
+]
