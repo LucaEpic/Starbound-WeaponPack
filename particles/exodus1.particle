@@ -14,7 +14,7 @@
     "timeToLive" : 0.5,
     "variance" : {
       "initialVelocity" : [2.0, 2.0],
-      "size" : 0.5,
+      "size" : 0.4,
       "position" : [0, 0]
     }
   }
