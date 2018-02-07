@@ -7,7 +7,7 @@
     "light" : [75, 255, 255],
     "position" : [0, 0],
     "destructionAction" : "shrink",
-    "destructionTime" : 0.4,
+    "destructionTime" : 0.5,
     "fade" : 1,
     "layer" : "middle",
     "fullbright" : true,
